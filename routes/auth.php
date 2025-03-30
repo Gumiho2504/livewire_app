@@ -1,6 +1,11 @@
 <?php
 
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Livewire\Images\Image;
+use App\Livewire\Images\ImageIndex;
+use App\Livewire\Tasks\TaskIndex;
+use App\Livewire\Tasks\TaskShow;
+use Illuminate\Routing\RouteAction;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
@@ -28,4 +33,9 @@ Route::middleware('auth')->group(function () {
 
     Volt::route('confirm-password', 'pages.auth.confirm-password')
         ->name('password.confirm');
+
+    Route::get('tasks', TaskIndex::class)->name('tasks.index');
+    Route::get('task/{task}' ,TaskShow::class)->name('tasks.show');
+
+    Route::get('image',ImageIndex::class)->name('images.index');
 });

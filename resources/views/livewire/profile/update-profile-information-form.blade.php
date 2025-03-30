@@ -112,4 +112,8 @@ new class extends Component
             </x-action-message>
         </div>
     </form>
+
+    <div>
+        <img src="{{asset('storage/'.auth()->user()->image->path)}}" alt="">
+    </div>
 </section>
